@@ -1,2 +1,2 @@
 # Projects
-I made some projects using html and css
+I made some projects using html,css and Javascript
