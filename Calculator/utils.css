@@ -1,0 +1,27 @@
+.text-center{
+    text-align: center;
+  }
+  
+  .bg-red{
+    background: red;
+  }
+  
+  .mx-auto{
+    margin: auto;
+  }
+  
+  .flex{
+    display:flex;/*flex box assign in rows and columns*/
+  } 
+  .flex-col{
+    flex-direction: column;
+  }
+  
+  .items-center{
+    align-items: center;
+  }
+  .footer{
+    text-align:center;
+    color:black;
+    padding:124px 0 0 0px;
+  }
