@@ -1,2 +1,2 @@
 # Projects
-I made some projects using html,css and Javascript
+I am a web developer and love making some cool websites
