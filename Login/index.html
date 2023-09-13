@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" href="https://img.icons8.com/?size=1x&id=48179&format=png">
+    </head>
+    <body>
+        <div class="login">
+            <div class="login_content">
+                <div class="login_img">
+                    <img src="img.png" alt="login image">
+                </div>
+
+                <div class="login_forms">
+                    <form action="" class="login_register" id="log-in">
+                        <h1 class="login_title">Sign In</h1>
+                        <div class="login_box">
+                            <i class='bx bx-user login_icon '></i>
+                            <input type="text" placeholder="Username" class="login_input">
+                        </div>
+                        <div class="login_box">
+                            <i class='bx bx-lock login_icon '></i>
+                            <input type="password" placeholder="password" class="login_input">
+                        </div>
+
+                        <a href="#" class="login_forgot">Forgot password?</a>
+                        <a href="#" class="login_button">Sign In</a>
+
+                        <div>
+                            <span class="login_accout">Don't have an Account?</span>
+                            <span class="login_signin" id="sign-up">Sign Up</span>
+                        </div>
+                    </form>
+
+
+                    <form action="" class="login_create none" id="log-up">
+                        <h1 class="login_title">Create Account</h1>
+                        <div class="login_box">
+                            <i class='bx bx-user login_icon '></i>
+                            <input type="text" placeholder="Email" class="login_input">
+                        </div>
+                        <div class="login_box">
+                            <i class='bx bx-at login_icon '></i>
+                            <input type="text" placeholder="password" class="login_input">
+                        </div>
+
+                        <a href="#" class="login_button">Sign Up</a>
+
+                        <div>
+                            <span class="login_accout">Already have an Account?</span>
+                            <span class="login_signup" id="sign-in">Sign In</span>
+                        </div>
+                        <div class="login_social">
+                            <a href="#" class="login_social_icon"><i class='bx bxl-facebook' ></i></a>
+                            <a href="#" class="login_social_icon"><i class='bx bxl-twitter' ></i></a>
+                            <a href="#" class="login_social_icon"><i class='bx bxl-google' ></i></a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>
