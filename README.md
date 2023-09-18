@@ -1,2 +1,3 @@
 # Projects
-I am a web developer and love making some cool websites
+Currently, I am a front-end developer aspiring to be full stack developer
+I made some projects using html,css and javascript
