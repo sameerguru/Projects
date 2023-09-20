@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding:0 10px;
+  background: #2baeda;
+}
+
+.container{
+  height:265px;
+  background:#fff;
+  max-width: 410px;
+  border-radius: 7px;
+  padding: 20px 25px 0;
+  transition: height 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.container.active{
+  height:530px;
+}
+
+
+header h1{
+  font-size:20px;
+  font-weight:500;
+}
+
+header p{
+  margin-top: 5px;
+  font-size: 16px;
+  color: #575757;
+}
+
+.container .whole{
+  margin:20px 0 25px;
+}
+
+.whole :where(input,button){
+  width:100%;
+  height:55px;
+  border: none;
+  outline: none;
+  border-radius:5px;
+  transition:0.1s ease;
+}
+
+.whole input{
+  font-size:18px;
+  padding: 0 17px;
+  border:1px solid #999;
+}
+
+.whole input:focus{
+  box-shadow: 0 3px 7px rgba(0,0,0,0.13);
+}
+
+.whole input::placeholder{
+  color:#999;
+}
+
+.whole button{
+  cursor: pointer;
+  color:#fff;
+  font-size: 17px;
+  margin-top:20px;
+  background: #0d92bf;
+}
+
+.qrimg{
+  opacity:0;
+  display:flex;
+  padding:33px 0;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  border:1px solid #ccc;
+  border-radius: 5px;
+}
+
+.qrimg img{
+  width:170px;
+}
+
+.container.active .qrimg{
+  opacity: 1;
+  pointer-events: auto;
+  /* 0.05s delay in transition,0.5s duration */
+  transition:opacity 0.5s 0.05s ease;
+}
