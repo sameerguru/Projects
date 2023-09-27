@@ -1,0 +1,136 @@
+body{
+    margin:0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+  }
+  
+  .candle{
+    width:15em;
+    height: 30em;
+    /* 50% gradient means from sienna to rgba color transition takes place */
+    background: linear-gradient(
+      orange,darkorange,sienna,saddlebrown 50% ,rgba(0,0,0,0.6)
+    );
+    font-size: 7px;
+    /* inset means shadow inside the container */
+    box-shadow: inset 2em -3em 5em rgba(0,0,0,0.6),
+      inset -2em 0em 5em rgba(0,0,0,0.6);
+    position:relative;
+    display: flex;
+    justify-content:center;
+    top:10em;
+    /* horizontal and vertical radius */
+    border-radius: 10em/4em;
+  }
+  
+  .candle::before{
+    content:'';
+    position: absolute;
+    height:5em;
+    /* inherit means parent container width */
+    width:inherit;
+    box-sizing:border-box;
+    background: radial-gradient(
+      #444,
+      orange,
+      saddlebrown,
+      sienna,
+      darkorange
+    );
+    border:0.2em solid darkorange;
+    border-radius:50%;
+    filter:opacity(0.7);
+  }
+  
+  .thread{
+    position: absolute;
+    width:0.6em;
+    height:3.6em;
+    top:-1.8em;
+    background: linear-gradient(
+      #f2f2f2,
+      white,
+      orange 90%
+    );
+    border-radius: 40% 40% 0 0;
+    cursor: pointer;
+  }
+  
+  .thread.change{
+    background: linear-gradient(
+      #111,
+      black,
+      orange 90%
+    );
+  }
+  
+  .flames{
+    position:absolute;
+    width:2.4em;
+    visibility:hidden;
+  }
+  .flames.active{
+    visibility: visible;
+  }
+  
+  .flames::before{
+    content: '';
+    position: absolute;
+    width:inherit;
+    height:6em;
+    top:-4.8em;
+    background: royalblue;
+    border: 0.2em solid dodgerblue;
+    border-radius: 50% 50% 35% 35%;
+    box-sizing:border-box;
+    filter:opacity(0.7);
+  }
+  
+  .flames::after{
+    content: '';
+    position: absolute;
+    height:12em;
+    width: inherit;
+    top:-12em;
+    background:linear-gradient(white 50%,transparent);
+    border-radius: 50% 50% 20% 20%;
+    /* -0.6em means vertical offset above the flame 0.4em shadow blurness 0em means shadow below */
+    box-shadow: 0 -0.6em 0.4em darkorange;
+    animation: move 6s linear infinite;
+  }
+  
+  @keyframes move{
+    0%,100%{
+      transform: rotate(2deg);
+    }
+    50%{
+      transform:rotate(-2deg);
+    }
+  }
+  
+  .glow{
+    content: '';
+    position: absolute;
+    width:10em;
+    height:18em;
+    top:-17em;
+    background: orangered;
+    border-radius: 50%;
+    filter:blur(6em);
+    visibility: hidden;
+    animation: blink 100ms infinite;
+  }
+  
+  .glow.active{
+    visibility: visible;
+  }
+  
+  @keyframes blink{
+    t0{
+      filter:blur(6em) opacity(0.2em);
+    }
+  }
+  
