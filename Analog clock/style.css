@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+*,*:after,*:before{
+  box-sizing: border-box;
+}
+
+body{
+  background: #000;
+  color:#fff;
+  min-height: 100vh;
+  margin:0;
+  font-family: "Comfortaa", cursive;
+}
+
+.clock{
+  --clock-size: 360px;
+  width:var(--clock-size);
+  height:var(--clock-size);
+  position: fixed;
+  inset:0;
+  margin:auto;
+  border-radius: 50%;
+}
+
+.spike{
+  position: absolute;
+  width:8px;
+  height:1px;
+  background: #fff9;
+  line-height: 20px;
+  transform-origin: 50%;
+  z-index: 5;
+  inset:0;
+  margin: auto;
+  font-style: normal;
+  transform: rotate(var(--rotate)) translateX(var(--dail-size));
+}
+
+.spike:nth-child(5n+1){
+  box-shadow: -7px 0 #fff9;
+}
+.spike:nth-child(5n+1):after{
+  content:attr(data-i);
+  position: absolute;
+  right:22px;
+  top:-10px;
+  transition: 1s linear;
+  transform: rotate(calc(var(--drotate) - var(--rotate)));
+}
+
+.seconds{
+  --drotate:0deg;
+  --dail-size:calc((var(--clock-size)/2) - 8px);
+  font-weight: 800;
+  font-size:18px;
+  transform:rotate(calc(-1 * var(--drotate)));
+  position: absolute;
+  margin:auto;
+  inset:0;
+  transition: 1s linear;
+}
+
+.minutes{
+  --dail-size: calc(((var(--clock-size)/2) - 65px));
+  transform: rotate(calc(-1 * var(--drotate)));
+  font-size: 16px;
+  position: absolute;
+  margin:auto;
+  inset:0;
+  transition: 1s linear;
+}
+
+.hour{
+  font-size: 70px;
+  font-weight: 900;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+
+.minute{
+  font-size:36px;
+  font-weight:900;
+  position:absolute;
+  background: #000;
+  z-index:10;
+  top:50%;
+  transform: translateY(-50%);
+  right: calc((var(--clock-size))/4.5);
+}
+
+.minute:after{
+  content: "";
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  border: 2px solid #fff;
+  left: -10px;
+  width: calc(var(--clock-size)/2.75);
+  height:50px;
+  border-right: none;
+  border-radius: 40px 0 0 40px;
+}
+
+.stop-anim {
+  transition: 0s linear;
+}
+.stop-anim .spike:after {
+  transition: 0s linear !important;
+}
+
+
+@media (max-width:390px){
+  .clock{
+  --clock-size: 300px;
+  width:var(--clock-size);
+  height:var(--clock-size);
+  position: fixed;
+  inset:0;
+  margin:auto;
+  border-radius: 50%;
+}
+
+  .minute{
+    font-size: 30px;
+    font-weight: 900;
+  }
+  .hour{
+    font-size: 60px;
+    font-weight: 900;
+  }
+}
